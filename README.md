@@ -1,4 +1,4 @@
-# Download-Videos-with-subs-and-audio-using-ytdlp-
+# Download Videos with subs and Dub using ytdld
 
 :: Download video
 
