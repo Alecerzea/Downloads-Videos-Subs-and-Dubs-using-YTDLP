@@ -2,20 +2,22 @@
 
 :: Download video
 
-yt-dlp -f "bv*+ba[language=en]/best" -o "%(title)s.%(ext)s" "<VIDEO_URL>"
+yt-dlp -f "bv*+ba[language=en]/best" -o "video_base.%(ext)s" "<VIDEO_URL>"
 
-:: English subs
+:: English Dub
+yt-dlp -f "bestaudio[language=en]" -o "audio_en.%(ext)s" "<VIDEO_URL>"
 
-yt-dlp --write-subs --sub-lang "en" --skip-download --convert-subs srt -o "%(title)s.%(language)s.%(ext)s" "<VIDEO_URL>"
+:: Spanish Dub
+yt-dlp -f "bestaudio[language=es]" -o "audio_es.%(ext)s" "<VIDEO_URL>"
 
-:: Spanish subs
+:: French Dub
+yt-dlp -f "bestaudio[language=fr]" -o "audio_fr.%(ext)s" "<VIDEO_URL>"
 
-yt-dlp --write-subs --sub-lang "es-419" --skip-download --convert-subs srt -o "%(title)s.%(language)s.%(ext)s" "<VIDEO_URL>"
+:: English Subtitles
+yt-dlp --write-subs --sub-lang "en" --skip-download --convert-subs srt -o "subs_en.srt" "<VIDEO_URL>"
 
-:: English dub audio only
+:: Spanish Subtitles
+yt-dlp --write-subs --sub-lang "es" --skip-download --convert-subs srt -o "subs_es.srt" "<VIDEO_URL>"
 
-yt-dlp -f "bestaudio" -x --audio-format mp3 -o "%(title)s.en-dub.%(ext)s" "<VIDEO_URL>"
-
-:: Spanish dub audio only
-
-yt-dlp -f "bestaudio" -x --audio-format mp3 -o "%(title)s.es-dub.%(ext)s" "<VIDEO_URL>"
+:: French Subtitles
+yt-dlp --write-subs --sub-lang "fr" --skip-download --convert-subs srt -o "subs_fr.srt" "<VIDEO_URL>"
