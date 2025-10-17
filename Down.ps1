@@ -1,5 +1,5 @@
 $videoURL = Read-Host "Enter video URL"
-$basename = Read-Host "Enter base filename (e.g., Movie (2023))"
+$basename = Read-Host "Enter base filename"
 $mkvName = "$basename.mkv"
 
 # Download base video
