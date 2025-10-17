@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 set /p VIDEO_URL=Enter video URL: 
-set /p BASENAME=Enter base filename (e.g., Movie (2023)): 
+set /p BASENAME=Enter base filename: 
 set MKV_NAME=%BASENAME%.mkv
 
 :: Download video
