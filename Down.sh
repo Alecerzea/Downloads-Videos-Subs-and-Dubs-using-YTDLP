@@ -1,7 +1,7 @@
 #!/bin/bash
 
 read -p "Enter video URL: " VIDEO_URL
-read -p "Enter base filename (e.g., Movie (2023)): " BASENAME
+read -p "Enter base filename: " BASENAME
 MKV_NAME="$BASENAME.mkv"
 
 # Download base video (with English audio)
@@ -34,5 +34,3 @@ ffmpeg -i "$VIDEO_FILE" \
   -metadata:s:s:2 language=fra -metadata:s:s:2 title="French Subtitles" \
   -disposition:a:0 default \
   "$MKV_NAME"
-
-echo "✅ Merged output: $MKV_NAME"
